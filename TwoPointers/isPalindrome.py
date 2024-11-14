@@ -1,23 +1,22 @@
 def isPalindrome(s):
-    justLetters = ''.join(x for x in s if x.isalnum())
-    finalString = justLetters.lower()
+    justLetters="".join(letter for letter in s if letter.isalnum())
+    justLetters=justLetters.lower()
     i=0
-    j=len(finalString)-1
-    while i<j:
-        if finalString[i]!=finalString[j]:
+    j=len(justLetters)
+    while(i>j):
+        if justLetters[i]!=justLetters[j]:
             return False
-        i+=1
-        j-=1
+        i=i+1
+        j=j-1
     return True
-
 s="Was it a car or a cat I saw?"
-justLetters=''.join(x for x in s if x.isalnum())
-print(justLetters)
-finalString=justLetters.lower()
-print(finalString)
-
+# justLetters=''.join(x for x in s if x.isalnum())
+# print(justLetters)
+# finalString=justLetters.lower()
+# print(finalString)
+#
 print(isPalindrome(s))
-print(isPalindrome("0P"))
+# print(isPalindrome("0P"))
 
 
 #implementare isalnum
