@@ -23,3 +23,6 @@ def efficientProduct(nums):
         res[j] *= postfix
         postfix *= nums[j]
     return res
+
+
+
