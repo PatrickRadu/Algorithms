@@ -20,5 +20,6 @@ def reversePolish(tokens):
             stack.append(int(c))
     return stack[0]
 
+
 print(reversePolish(["1","2","+","3","*","4","-"]))
 
