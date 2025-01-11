@@ -28,3 +28,21 @@ def slidingWindow(s,k):
             res=max(res,r-l+1)
     return s
 print(longestRepeatingbf('AAABABB',2))
+
+
+def slidingWindowMap(s,k):
+    res=0
+    letterCount={}
+    l=0
+    maxCount=0
+    for r in range(len(s)):
+        letterCount[s[r]]=1+letterCount.get(s[r],0)
+        maxCount=max(maxCount,letterCount[s[r]])
+        while(r-l+1)-maxCount>k:
+                letterCount[s[l]]-=1
+                l+=1
+        res=max(r-l+1,res)
+    return res
+print(slidingWindowMap('AAABABB',1))
+
+
