@@ -161,7 +161,7 @@ print(ord("a")) #valoarea ascii
 
 strings=["ab","cd","ef"]
 print("".join(strings)) #face append la stringuri in unul singur
-something
+
 #Queue
 from collections import deque
 queue=deque()
