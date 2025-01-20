@@ -45,7 +45,7 @@ def dfs_rec(adj,visited,s):
         if not visited[i]:
             dfs_rec(adj,visited,i)
 
-#dfs de la o sursa stiute
+#dfs de la o sursa stiuta
 def dfs(adj,s):
     visited=[False]*len(adj)
     dfs_rec(adj,visited,s)
@@ -74,3 +74,42 @@ print()
 print("Complete DFS of the graph:")
 all_dfs(adj)
 
+
+#BFS
+def bfs(adj,s,visited):
+    q=deque()
+    visited=[False] * len(adj)
+    visited[s]=True
+    q.append(s)
+    while q:
+        curr=q.popleft()
+        print(curr,end=' ')
+        for x in adj[curr]:
+            if not visited[x]:
+                visited[x]=True
+                q.append(x)
+print()
+print("BFS ")
+bfs(adj,0)
+
+#DISCONECTED GRAPH
+
+def bfs(adj, s, visited):
+    q = deque()  # Create a queue for BFS
+
+    visited[s] = True
+    q.append(s)
+
+    # Iterate over the queue
+    while q:
+        curr = q.popleft()
+        print(curr, end=" ")
+        for x in adj[curr]:
+            if not visited[x]:
+                visited[x] = True
+                q.append(x)
+def bfs_disconected(adj):
+    visited=[False]*len(adj)
+    for i in range(len(adj)):
+        if not visited[i]:
+            bfs(adj,i)
